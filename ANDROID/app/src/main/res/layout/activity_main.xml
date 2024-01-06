@@ -13,7 +13,11 @@
         app:menu="@menu/item_menu"
         android:id="@+id/bottom_navigation"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:itemIconTint="@drawable/item_selector"
+        app:itemTextColor="@drawable/item_selector"
+        app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
