@@ -14,7 +14,7 @@ class SplashActivity : AppCompatActivity() {
 
         // 지정된 시간이 지난 후에 메인 액티비티로 이동
         Handler().postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }, SPLASH_TIME_OUT)
