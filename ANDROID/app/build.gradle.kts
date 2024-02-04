@@ -5,6 +5,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id ("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+    id("com.google.gms.google-services")
 
 }
 
@@ -92,7 +93,9 @@ android {
 
         implementation("com.google.android.libraries.places:places:3.3.0")
 
-
+//firebase (라즈베리파이)
+        implementation(platform("com.google.firebase:firebase-bom:32.7.1"))
+        implementation("com.google.firebase:firebase-analytics")
 
 
 
