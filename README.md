@@ -13,8 +13,9 @@
 -
 
 ## Technology Stack
+<img width="805" alt="teck_elderus2" src="https://github.com/GDSC-SWU/2024-Elderus-SolutionChallenge/assets/81478444/ea528d5b-323e-4982-9707-1edd41e82523">
 
-![teck_elderus](https://github.com/GDSC-SWU/2024-Elderus-SolutionChallenge/assets/81478444/ef17fdc8-24a1-4a4e-95be-4899d60392de)
+
 
 
 ### ✌️ 참여 인원
