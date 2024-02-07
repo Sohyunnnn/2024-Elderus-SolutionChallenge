@@ -1,9 +1,21 @@
 # 2024-Elderus-SolutionChallenge
 
-## About Project 
+## Problem
+
+-
+
+## SDG
+
+-
+
+## About Elderus
+
+-
+
+## Technology Stack
+<img width="805" alt="teck_elderus2" src="https://github.com/GDSC-SWU/2024-Elderus-SolutionChallenge/assets/81478444/ea528d5b-323e-4982-9707-1edd41e82523">
 
 
-독거노인의 고독사 예방을 위한 이상행동 탐지 서비스
 
 
 ### ✌️ 참여 인원
