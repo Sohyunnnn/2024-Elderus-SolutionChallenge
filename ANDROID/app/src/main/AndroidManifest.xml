@@ -17,6 +17,9 @@
         android:theme="@style/Theme.Elderus"
         tools:targetApi="31">
         <activity
+            android:name=".SignupOldGoogleActivity"
+            android:exported="false" />
+        <activity
             android:name=".FCMActivity"
             android:exported="false" />
 
