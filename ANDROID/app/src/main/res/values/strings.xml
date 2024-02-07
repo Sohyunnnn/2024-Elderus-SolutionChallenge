@@ -2,4 +2,7 @@
     <string name="app_name">Elderus</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="google_acou">Google account information</string>
+    <string name="some_id">Create senior account</string>
+    <string name="please_ente">Please enter\nyour personal information</string>
 </resources>
