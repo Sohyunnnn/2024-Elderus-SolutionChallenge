@@ -33,7 +33,15 @@
             android:textStyle="bold|normal"
             android:layout_PaddingLeft="8dp"/>
 
+
     </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/gray2"
+        app:layout_constraintStart_toStartOf="@id/Toolbar"
+        app:layout_constraintTop_toBottomOf="@id/Toolbar"/>
 
     <TextView
         android:id="@+id/tv1"
