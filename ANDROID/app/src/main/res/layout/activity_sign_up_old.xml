@@ -32,8 +32,7 @@
             android:layout_height="wrap_content"
             android:text="Create senior account"
             android:textSize="20dp"
-            android:textStyle="bold|normal"
-            android:layout_PaddingLeft="8dp"/>
+            android:textStyle="bold|normal" />
 
 
     </androidx.appcompat.widget.Toolbar>
@@ -248,6 +247,7 @@
                     />
 
                 <ImageView
+                    android:id="@+id/iv_calender"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:src="@drawable/btn_calendar"
