@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -18,17 +17,20 @@
         android:theme="@style/Theme.Elderus"
         tools:targetApi="31">
         <activity
+            android:name=".RegistrationOldActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrationGuardActivity"
+            android:exported="false" />
+        <activity
             android:name=".SigninTypeActivity"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
             android:exported="true"
-            android:theme="@style/NoActionBarTheme">
+            android:theme="@style/NoActionBarTheme" />
         <activity
             android:name=".SignupOldGoogleActivity"
-            android:exported="false" />
-        <activity
-            android:name=".FCMActivity"
             android:exported="false" />
 
         <service
@@ -64,6 +66,8 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+        <!--
+ mainactivity가 2개인데요?? 그래서 일단 아래거 하나 주석 처리했습니다
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -71,7 +75,7 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-
+        -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="${MAPS_API_KEY}" />
