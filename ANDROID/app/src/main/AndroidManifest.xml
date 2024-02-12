@@ -27,6 +27,9 @@
         <activity
             android:name=".SignupOldGoogleActivity"
             android:exported="false" />
+        <activity
+            android:name=".SignUpOldActivity"
+            android:exported="false" />
 
         <service
             android:name=".MyFirebaseMessagingService"
