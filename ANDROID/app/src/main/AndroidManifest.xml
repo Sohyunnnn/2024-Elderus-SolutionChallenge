@@ -23,12 +23,9 @@
         <activity
             android:name=".SplashActivity"
             android:exported="true"
-            android:theme="@style/NoActionBarTheme">
+            android:theme="@style/NoActionBarTheme"/>
         <activity
             android:name=".SignupOldGoogleActivity"
-            android:exported="false" />
-        <activity
-            android:name=".FCMActivity"
             android:exported="false" />
 
         <service
@@ -48,15 +45,6 @@
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_hospital" />
 
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".LoginActivity"
             android:exported="true">

@@ -30,8 +30,7 @@
             android:layout_height="wrap_content"
             android:text="Create senior account"
             android:textSize="20dp"
-            android:textStyle="bold|normal"
-            android:layout_PaddingLeft="8dp"/>
+            android:textStyle="bold|normal" />
 
 
     </androidx.appcompat.widget.Toolbar>
@@ -76,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="@id/btn_type_senior"
-                app:layout_constraintTop_toStartOf="@id/btn_type_senior"
+                app:layout_constraintTop_toTopOf="@id/btn_type_senior"
                 tools:ignore="MissingConstraints">
 
             <TextView
