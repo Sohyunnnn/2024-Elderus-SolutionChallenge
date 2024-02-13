@@ -91,10 +91,9 @@ class SignUpOldActivity : AppCompatActivity() {
 
         // 유효성 검사를 통과하면 계속 버튼 활성화
         val isValidEmail = Patterns.EMAIL_ADDRESS.matcher(email).matches()
-        val isPasswordValid = password.length >= 8
         val isPasswordMatch = password == checkPassword
 
-        val isContinueEnabled = isNotEmptyFields && isValidEmail && isPasswordValid && isPasswordMatch
+        val isContinueEnabled = isNotEmptyFields && isValidEmail && isPasswordMatch
 
         continueButton.isEnabled = isContinueEnabled
 
