@@ -26,7 +26,6 @@ class SignUpOldActivity : AppCompatActivity() {
     private lateinit var birthdayTextView: TextView
     private lateinit var continueButton: AppCompatButton
 
-    private lateinit var BackButton: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -100,12 +99,14 @@ class SignUpOldActivity : AppCompatActivity() {
         // continueButton의 색상 변경
         if (isContinueEnabled) {
             continueButton.backgroundTintList = ContextCompat.getColorStateList(this, R.color.main_color)
-            // 다른 액티비티로 이동하는 Intent 생성
+        } else {
+            continueButton.backgroundTintList = ContextCompat.getColorStateList(this, R.color.gray2)
+        }
+
+        continueButton.setOnClickListener {
             val intent = Intent(this, signUpOldCompleteActivity::class.java)
             startActivity(intent) // 다음 액티비티 시작
             finish() // 현재 액티비티 종료
-        } else {
-            continueButton.backgroundTintList = ContextCompat.getColorStateList(this, R.color.gray2)
         }
 
         val BackButton = findViewById<ImageView>(R.id.iv_sign_up_old_back)
