@@ -9,12 +9,26 @@ Abnormal behavior is detected through a Raspberry Pi connected to a webcam, and 
 Therefore, when abnormal behavior is detected, you can check a notification message and an image capturing the abnormal behavior on Android.
 
 ## Equipment used (Hardware)
-
-|Hardware|Raspberry Pi 4| Webcam - Logitech Pro Converter C922 |
-|Image|<img width="300" alt="image" src="https://github.com/GDSC-SWU/2024-Elderus-SolutionChallenge/assets/81478444/dbc4e27b-fff2-4c43-a21a-0dc919d47f67">|<img width="281" alt="image" src="https://github.com/GDSC-SWU/2024-Elderus-SolutionChallenge/assets/81478444/992900a4-b9f2-4f8f-826d-996a7d93df3d">|
+Information
+<table>
+  <tr>
+    <td>
+    Raspberry Pi 4 (4GB)
+    </td>
+    <td>
+       Webcam - Logitech Pro Converter C922
+    </td>
+  </tr>
+  <tr>
+  <td>  <img width="300" alt="image" src="https://github.com/GDSC-SWU/2024-Elderus-SolutionChallenge/assets/81478444/dbc4e27b-fff2-4c43-a21a-0dc919d47f67"></td>
+    <td>
+      <img width="281" alt="image" src="https://github.com/GDSC-SWU/2024-Elderus-SolutionChallenge/assets/81478444/992900a4-b9f2-4f8f-826d-996a7d93df3d">
+    </td>
+  </tr>
+</table>
 
 ## Tools 
 
 - Putty
-- RealVNC Viewer 
-
+- RealVNC Viewer
+  
