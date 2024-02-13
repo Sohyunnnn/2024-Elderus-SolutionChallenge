@@ -84,7 +84,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/login_edit_text"
                 android:hint="please enter your email"
@@ -265,7 +264,7 @@
                 android:id="@+id/tv_phone_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Given name"
+                android:text="Phone number"
                 android:textAppearance="@style/TextAppearance.elderus.Subtitle_Medium"
                 android:textColor="@color/gray1"
                 android:layout_marginTop="40dp"
@@ -277,7 +276,7 @@
                 android:id="@+id/et_phone_number"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:hint="Please enter your given name"
+                android:hint="Please enter a number only"
                 android:inputType="text"
                 android:background="@drawable/login_edit_text"
                 android:layout_marginTop="8dp"
@@ -288,7 +287,7 @@
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_sign_in"
+                android:id="@+id/btn_sign_up_old_continue"
                 android:layout_width="328dp"
                 android:layout_height="64dp"
                 android:text="Continue"
