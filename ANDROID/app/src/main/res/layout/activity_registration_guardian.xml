@@ -34,6 +34,13 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/gray2"
+        app:layout_constraintStart_toStartOf="@id/Toolbar"
+        app:layout_constraintTop_toBottomOf="@id/Toolbar"/>
+
     <TextView
         android:id="@+id/please_ente_old"
         android:layout_width="wrap_content"
@@ -48,42 +55,26 @@
         android:textAppearance="@style/TextAppearance.elderus.Heading2"/>
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="0dp"
+    <EditText
+        android:id="@+id/et_ward_email"
+        android:layout_width="match_parent"
         android:layout_height="52dp"
-        android:orientation="horizontal"
-        android:background="@drawable/login_edit_text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/please_ente_old"
         android:layout_marginHorizontal="16dp"
-        android:padding="0dp"
         android:layout_marginTop="154dp"
-        android:id="@+id/old_rec">
-
-        <EditText
-            app:layout_constraintTop_toTopOf="@id/old_rec"
-            android:id="@+id/old_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            app:layout_constraintStart_toStartOf="@id/old_rec"
-            android:hint="Please enter ward's email"
-            android:textSize="16sp"
-            android:layout_marginVertical="16dp"
-            android:background="@android:color/transparent"
-            />
-
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:background="@drawable/login_edit_text"
+        android:hint="Please enter guardian’s email"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/please_ente_old"
+        />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/helpbox"
         android:layout_width="0dp"
         android:layout_height="107dp"
         android:background="@drawable/helpbox"
-        app:layout_constraintTop_toBottomOf="@id/old_rec"
+        app:layout_constraintTop_toBottomOf="@id/et_ward_email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="120dp"
@@ -118,17 +109,21 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_regisold"
         android:layout_width="0dp"
         android:layout_height="64dp"
         android:text="Continue"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textSize="20sp"
+        android:background="@drawable/btn_sign_in"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/helpbox"
         android:layout_marginTop="39dp"
         android:layout_marginHorizontal="16dp"
-        android:backgroundTint="#DADADA" />
+        android:backgroundTint="@color/gray2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
