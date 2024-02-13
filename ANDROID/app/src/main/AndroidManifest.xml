@@ -24,6 +24,8 @@
             android:exported="false" />
         <activity
             android:name=".SignUpGuardianActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegistrationOldActivity"
             android:exported="false" />
         <activity
