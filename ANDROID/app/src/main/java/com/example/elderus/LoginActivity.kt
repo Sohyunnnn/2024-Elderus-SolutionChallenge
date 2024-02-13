@@ -10,10 +10,10 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val btnSignIn: AppCompatButton = findViewById(R.id.btn_sign_in)
+        val btnLocalLogin: AppCompatButton = findViewById(R.id.btn_local_login)
 
-        // 버튼(btn_sign_in) 클릭 리스너 설정
-        btnSignIn.setOnClickListener {
+        // 버튼 클릭 리스너 설정
+        btnLocalLogin.setOnClickListener {
             // 다음 액티비티로 이동
             val intent = Intent(this, SigninTypeActivity::class.java)
             startActivity(intent)

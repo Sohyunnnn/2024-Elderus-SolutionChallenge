@@ -6,4 +6,8 @@
     <string name="google_acou">Google account information</string>
     <string name="some_id">Create senior account</string>
     <string name="please_ente">Please enter\nyour personal information</string>
+    <string name="please_enter_your_email_and_password">Please enter \n<font color="#E4204F">your email and password</font></string>
+    <string name="please_enter_your_personal_information">Please enter \n<font color="#E4204F">your personal information</font></string>
+    <string name="please_enter_your_email_and_password_guardian">Please enter \n<font color="#1D8572">your email and password</font></string>
+    <string name="please_enter_your_personal_information_guardian">Please enter \n<font color="#1D8572">your personal information</font></string>
 </resources>
