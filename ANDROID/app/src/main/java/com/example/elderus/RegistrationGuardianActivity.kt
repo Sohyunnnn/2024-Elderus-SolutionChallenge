@@ -6,14 +6,15 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 
-class RegistrationGuardActivity : AppCompatActivity() {
+class RegistrationGuardianActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_registration_guard)
-        var btnRegisGuard : Button
-        btnRegisGuard = findViewById(R.id.btn_regisguard)
+        setContentView(R.layout.activity_registration_guardian)
 
-        btnRegisGuard.setOnClickListener {
+        var btnRegisOld : Button
+        btnRegisOld = findViewById(R.id.btn_regisold)
+
+        btnRegisOld.setOnClickListener {
             showDialog()
         }
 
@@ -22,8 +23,8 @@ class RegistrationGuardActivity : AppCompatActivity() {
     private fun showDialog() {
         val builder = AlertDialog.Builder(this)
 
-        builder.setTitle("Hoja Bo")
-        builder.setMessage("Is your guardian 'Hoja Bo'?")
+        builder.setTitle("Yongja Ko")
+        builder.setMessage("Is your protected one 'Yongja Ko'?")
 
         builder.setPositiveButton("Yes (Registration)"){ dialogInterface : DialogInterface, i : Int ->
             dialogInterface.dismiss()

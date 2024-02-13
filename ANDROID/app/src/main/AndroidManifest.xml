@@ -26,10 +26,10 @@
             android:name=".SignUpGuardianActivity"
             android:exported="false" />
         <activity
-            android:name=".RegistrationOldActivity"
+            android:name=".RegistrationGuardianActivity"
             android:exported="false" />
         <activity
-            android:name=".RegistrationGuardActivity"
+            android:name=".RegistrationOldActivity"
             android:exported="false" />
         <activity
             android:name=".SigninTypeActivity"

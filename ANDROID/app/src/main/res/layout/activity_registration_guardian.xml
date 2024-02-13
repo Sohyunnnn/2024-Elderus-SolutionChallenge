@@ -5,10 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".RegistrationGuardActivity">
+    tools:context=".RegistrationGuardianActivity">
 
-    <!--보호자를 등록-->
-
+    <!-- 피보호자를 등록 -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/Toolbar"
         android:layout_width="match_parent"
@@ -27,7 +26,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add a guardian"
+            android:text="Add a ward"
             android:textSize="20dp"
             android:textStyle="bold|normal"
             android:padding="16sp"
@@ -36,11 +35,11 @@
     </androidx.appcompat.widget.Toolbar>
 
     <TextView
-        android:id="@+id/please_ente_guard"
+        android:id="@+id/please_ente_old"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="28sp"
-        android:text="Please enter\nguardian's email"
+        android:text="Please enter\nward's email"
         android:textColor="#1B1B1B"
         app:layout_constraintTop_toBottomOf="@id/Toolbar"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,20 +55,20 @@
         android:background="@drawable/login_edit_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/please_ente_guard"
+        app:layout_constraintTop_toBottomOf="@id/please_ente_old"
         android:layout_marginHorizontal="16dp"
         android:padding="0dp"
         android:layout_marginTop="154dp"
-        android:id="@+id/guard_rec">
+        android:id="@+id/old_rec">
 
         <EditText
-            app:layout_constraintTop_toTopOf="@id/guard_rec"
-            android:id="@+id/guard_email"
+            app:layout_constraintTop_toTopOf="@id/old_rec"
+            android:id="@+id/old_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            app:layout_constraintStart_toStartOf="@id/guard_rec"
-            android:hint="Please enter guardian's email"
+            app:layout_constraintStart_toStartOf="@id/old_rec"
+            android:hint="Please enter ward's email"
             android:textSize="16sp"
             android:layout_marginVertical="16dp"
             android:background="@android:color/transparent"
@@ -84,7 +83,7 @@
         android:layout_width="0dp"
         android:layout_height="107dp"
         android:background="@drawable/helpbox"
-        app:layout_constraintTop_toBottomOf="@id/guard_rec"
+        app:layout_constraintTop_toBottomOf="@id/old_rec"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="120dp"
@@ -97,7 +96,7 @@
             android:layout_height="wrap_content"
             android:textColor="#767676"
             android:textStyle="bold"
-            android:text="Do you have more than one guardian?"
+            android:text="Do you have more than one ward?"
             android:textSize="16sp"
             android:gravity="center_vertical"
             android:layout_marginLeft="16dp"
@@ -109,7 +108,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#767676"
-            android:text="You can register one guardian at a time.\nYou can register additional guardians later."
+            android:text="You can register one ward at a time.\nYou can register additional ward later."
             android:textSize="14sp"
             android:gravity="center_vertical"
             android:layout_marginLeft="16dp"
@@ -120,7 +119,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/btn_regisguard"
+        android:id="@+id/btn_regisold"
         android:layout_width="0dp"
         android:layout_height="64dp"
         android:text="Continue"

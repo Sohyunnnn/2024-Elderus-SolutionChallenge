@@ -10,11 +10,10 @@ class RegistrationOldActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration_old)
+        var btnRegisGuard : Button
+        btnRegisGuard = findViewById(R.id.btn_regisguard)
 
-        var btnRegisOld : Button
-        btnRegisOld = findViewById(R.id.btn_regisold)
-
-        btnRegisOld.setOnClickListener {
+        btnRegisGuard.setOnClickListener {
             showDialog()
         }
 
@@ -23,8 +22,8 @@ class RegistrationOldActivity : AppCompatActivity() {
     private fun showDialog() {
         val builder = AlertDialog.Builder(this)
 
-        builder.setTitle("Yongja Ko")
-        builder.setMessage("Is your protected one 'Yongja Ko'?")
+        builder.setTitle("Hoja Bo")
+        builder.setMessage("Is your guardian 'Hoja Bo'?")
 
         builder.setPositiveButton("Yes (Registration)"){ dialogInterface : DialogInterface, i : Int ->
             dialogInterface.dismiss()
