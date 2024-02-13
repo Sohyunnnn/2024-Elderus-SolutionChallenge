@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="NoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
         <!-- Customize your theme here. -->
+    </style>
     <style name="some_id">
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">#1B1B1B</item>

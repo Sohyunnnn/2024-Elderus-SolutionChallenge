@@ -18,6 +18,7 @@
         >
 
         <ImageView
+            android:id="@+id/iv_sign_in_type_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_back"/>
@@ -30,8 +31,7 @@
             android:layout_height="wrap_content"
             android:text="Create senior account"
             android:textSize="20dp"
-            android:textStyle="bold|normal"
-            android:paddingLeft="8dp"/>
+            android:textStyle="bold|normal" />
 
 
     </androidx.appcompat.widget.Toolbar>
@@ -85,6 +85,7 @@
                 android:textAppearance="@style/TextAppearance.elderus.Heading2"
                 android:text="Senior" />
             <TextView
+                android:id="@+id/tv_senior_Description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -129,6 +130,7 @@
                 android:textAppearance="@style/TextAppearance.elderus.Heading2"
                 android:text="Guardian" />
             <TextView
+                android:id="@+id/tv_guardian_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -150,7 +152,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_sign_in"
+        android:id="@+id/btn_continue"
         android:layout_width="328dp"
         android:layout_height="64dp"
         android:text="Continue"
