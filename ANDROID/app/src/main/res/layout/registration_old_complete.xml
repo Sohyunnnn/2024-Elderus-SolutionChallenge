@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_back"/>
+        <View
+            android:layout_width="8dp"
+            android:layout_height="0dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add a guardian"
+            android:textSize="20dp"
+            android:textStyle="bold|normal"
+            android:padding="16sp"
+            android:paddingLeft="8dp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/txt_regis_comple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/Toolbar"
+        android:text="Registration has been completed"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
+        android:textColor="#1B1B1B"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="140dp"/>
+
+    <TextView
+        android:id="@+id/txt_regis_user"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_regis_comple"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:text="Yongja Ko is\nbe under the protection of \nHoja Bo"
+        android:textSize="24sp"
+        android:textColor="#1B1B1B"
+        android:textAppearance="@style/TextAppearance.elderus.Heading2"
+
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/img_guard_senior"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_regis_user"
+        android:padding="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="74dp">
+
+        <LinearLayout
+            android:id="@+id/senior_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="74dp"
+            android:layout_marginLeft="56dp"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/senior_circle"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/senior_circle"
+                android:layout_gravity="center">
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/senior"
+                    app:layout_constraintStart_toStartOf="@id/senior_circle"
+                    app:layout_constraintTop_toTopOf="@id/senior_circle"
+                    android:layout_margin="14dp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yongja Ko"
+                android:textSize="14sp"
+                android:textColor="#767676"
+                android:layout_margin="5dp"
+                />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/senior_guard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/senior_guard"
+            app:layout_constraintStart_toEndOf="@id/senior_img"
+            app:layout_constraintTop_toTopOf="@id/img_guard_senior"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="16dp"
+            tools:ignore="MissingConstraints" />
+
+        <LinearLayout
+            android:id="@+id/guard_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/senior_guard"
+            android:layout_marginTop="74dp"
+            android:layout_marginLeft="16dp"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/guard_circle"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/guard_circle">
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/guard"
+                    app:layout_constraintStart_toStartOf="@id/guard_circle"
+                    app:layout_constraintTop_toTopOf="@id/guard_circle"
+                    android:layout_margin="14dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hoja Bo"
+                android:textSize="14sp"
+                android:textColor="#767676"
+                android:layout_margin="5dp"
+                />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btn_regisguard_complete"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:text="Start Elderus"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_guard_senior"
+        android:layout_marginTop="139dp"
+        android:layout_marginHorizontal="16dp"
+        android:backgroundTint="#E4204F" />
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

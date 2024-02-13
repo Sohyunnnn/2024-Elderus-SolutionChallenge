@@ -30,6 +30,7 @@
             android:textStyle="bold|normal"
             android:padding="16sp" />
 
+
     </androidx.appcompat.widget.Toolbar>
 
     <TextView
@@ -127,7 +128,8 @@
 
 
     <Button
-        android:layout_width="328dp"
+        android:id="@+id/btn_signup_old"
+        android:layout_width="0dp"
         android:layout_height="64dp"
         android:text="Continue"
         app:layout_constraintStart_toStartOf="parent"
