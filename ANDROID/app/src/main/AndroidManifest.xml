@@ -17,6 +17,9 @@
         android:theme="@style/Theme.Elderus"
         tools:targetApi="31">
         <activity
+            android:name=".SignUpGuardianActivity"
+            android:exported="false" />
+        <activity
             android:name=".SigninTypeActivity"
             android:exported="false" />
         <activity
@@ -28,6 +31,7 @@
             android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -68,6 +72,6 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-            </application>
+    </application>
 
 </manifest>

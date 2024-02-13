@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpOldActivity"
+    tools:context=".SignUpGuardianActivity"
     android:background="@color/white">
 
 
@@ -204,63 +204,6 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_given_name" />
 
             <TextView
-                android:id="@+id/tv_birth"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="birthday"
-                android:textAppearance="@style/TextAppearance.elderus.Subtitle_Medium"
-                android:textColor="@color/gray1"
-                android:layout_marginTop="40dp"
-                app:layout_constraintStart_toStartOf="@id/et_given_name"
-                app:layout_constraintTop_toBottomOf="@id/et_given_name"/>
-
-
-
-
-
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/birthday_input"
-                android:layout_width="0dp"
-                android:layout_height="52dp"
-                android:orientation="horizontal"
-                android:background="@drawable/login_edit_text"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginHorizontal="16dp"
-                android:padding="0dp"
-                app:layout_constraintTop_toBottomOf="@id/tv_birth"
-                android:layout_marginTop="8dp">
-
-                <TextView
-                    app:layout_constraintTop_toTopOf="@id/birthday_input"
-                    android:id="@+id/birthday_txt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="17dp"
-                    app:layout_constraintStart_toStartOf="@id/birthday_input"
-                    android:text="Click the calendar on the right"
-                    android:textColor="@color/gray1"
-                    android:textSize="16sp"
-                    android:layout_marginVertical="16dp"
-                    />
-
-                <ImageView
-                    android:id="@+id/iv_calender"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:src="@drawable/btn_calendar"
-                    app:layout_constraintTop_toTopOf="@id/birthday_input"
-                    app:layout_constraintEnd_toEndOf="@id/birthday_input"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="10dp"/>
-
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <TextView
                 android:id="@+id/tv_phone_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -268,8 +211,8 @@
                 android:textAppearance="@style/TextAppearance.elderus.Subtitle_Medium"
                 android:textColor="@color/gray1"
                 android:layout_marginTop="40dp"
-                app:layout_constraintStart_toStartOf="@id/birthday_input"
-                app:layout_constraintTop_toBottomOf="@id/birthday_input"/>
+                app:layout_constraintStart_toStartOf="@id/et_given_name"
+                app:layout_constraintTop_toBottomOf="@id/et_given_name"/>
 
 
             <EditText
