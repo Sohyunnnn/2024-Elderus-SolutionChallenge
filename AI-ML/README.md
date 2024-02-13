@@ -11,9 +11,7 @@ Therefore, when abnormal behavior is detected, you can check a notification mess
 ## Equipment used (Hardware)
 
 |Hardware|Raspberry Pi 4| Webcam - Logitech Pro Converter C922 |
-|Image|<img width="100" src="<img width="300" alt="image" src="https://github.com/GDSC-SWU/2024-Elderus-SolutionChallenge/assets/81478444/dbc4e27b-fff2-4c43-a21a-0dc919d47f67">
-"/>|<img width="100" src="<img width="281" alt="image" src="https://github.com/GDSC-SWU/2024-Elderus-SolutionChallenge/assets/81478444/992900a4-b9f2-4f8f-826d-996a7d93df3d">
-"/>|
+|Image|<img width="300" alt="image" src="https://github.com/GDSC-SWU/2024-Elderus-SolutionChallenge/assets/81478444/dbc4e27b-fff2-4c43-a21a-0dc919d47f67">|<img width="281" alt="image" src="https://github.com/GDSC-SWU/2024-Elderus-SolutionChallenge/assets/81478444/992900a4-b9f2-4f8f-826d-996a7d93df3d">|
 
 ## Tools 
 
