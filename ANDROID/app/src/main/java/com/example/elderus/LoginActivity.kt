@@ -17,6 +17,7 @@ class LoginActivity : AppCompatActivity() {
             // 다음 액티비티로 이동
             val intent = Intent(this, SigninTypeActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }

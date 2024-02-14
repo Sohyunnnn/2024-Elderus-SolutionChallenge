@@ -17,13 +17,16 @@
         android:theme="@style/Theme.Elderus"
         tools:targetApi="31">
         <activity
-            android:name=".signUpGuardianCompleteActivity"
+            android:name=".SignUpGuardianCompleteActivity"
             android:exported="false" />
         <activity
-            android:name=".signUpOldCompleteActivity"
+            android:name=".SignUpOldCompleteActivity"
             android:exported="false" />
         <activity
             android:name=".SignUpGuardianActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUpOldActivity"
             android:exported="false" />
         <activity
             android:name=".RegistrationGuardianActivity"
@@ -35,7 +38,10 @@
             android:name=".SigninTypeActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpOldActivity"
+            android:name=".RegistrationGuardCompleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrationOldCompleteActivity"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"

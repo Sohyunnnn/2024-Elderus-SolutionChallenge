@@ -20,30 +20,33 @@ class RegistrationOldActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration_old)
-        var btnRegisGuard : Button
-        btnRegisGuard = findViewById(R.id.btn_regisguard)
 
-        btnRegisGuard.setOnClickListener {
-            showDialog()
-        }
+        // EditText 초기화
+        etGuardianEmail = findViewById(R.id.et_guardian_email)
 
-        val ContinueButton = findViewById<AppCompatButton>(R.id.btn_regisguard)
-        ContinueButton.setOnClickListener {
-            val intent = Intent(this, RegistrationOldCompleteActivity::class.java)
-            startActivity(intent) // 다음 액티비티 시작
-            finish() // 현재 액티비티 종료
-        }
+        // 버튼 초기화
+        btnRegisguard = findViewById(R.id.btn_regisguard)
 
+        // ContinueButton 이벤트 처리
+//        val ContinueButton = findViewById<AppCompatButton>(R.id.btn_regisguard)
+//        ContinueButton.setOnClickListener {
+//            val intent = Intent(this, RegistrationOldCompleteActivity::class.java)
+//            startActivity(intent) // 다음 액티비티 시작
+//            finish() // 현재 액티비티 종료
+//        }
+
+        // BackButton 이벤트 처리
         val BackButton = findViewById<ImageView>(R.id.iv_registration_old_back)
         BackButton.setOnClickListener {
-            val intent = Intent(this, signUpOldCompleteActivity::class.java)
+            val intent = Intent(this, SignUpOldCompleteActivity::class.java)
             startActivity(intent) // 다음 액티비티 시작
             finish() // 현재 액티비티 종료
         }
 
-        // EditText 및 Button 초기화
-        etGuardianEmail = findViewById(R.id.et_guardian_email)
-        btnRegisguard = findViewById(R.id.btn_regisguard)
+        // 버튼 클릭 리스너 설정
+        btnRegisguard.setOnClickListener {
+            showDialog()
+        }
 
         // EditText의 텍스트 변경 감지 리스너 설정
         etGuardianEmail.addTextChangedListener(object : TextWatcher {
@@ -70,6 +73,10 @@ class RegistrationOldActivity : AppCompatActivity() {
 
         builder.setPositiveButton("Yes (Registration)"){ dialogInterface : DialogInterface, i : Int ->
             dialogInterface.dismiss()
+            //엑티비티 이동
+            val intent = Intent(this, RegistrationOldCompleteActivity::class.java)
+            startActivity(intent) // 다음 액티비티 시작
+            finish() // 현재 액티비티 종료
         }
         builder.setNegativeButton("No (Enter again)"){ dialogInterface : DialogInterface, i : Int ->
             dialogInterface.dismiss()
