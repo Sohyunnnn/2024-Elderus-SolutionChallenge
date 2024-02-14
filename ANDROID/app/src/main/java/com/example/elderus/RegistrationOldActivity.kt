@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.AppCompatButton
+import androidx.core.content.ContextCompat
 
 class RegistrationOldActivity : AppCompatActivity() {
 
@@ -27,13 +28,6 @@ class RegistrationOldActivity : AppCompatActivity() {
         // 버튼 초기화
         btnRegisguard = findViewById(R.id.btn_regisguard)
 
-        // ContinueButton 이벤트 처리
-//        val ContinueButton = findViewById<AppCompatButton>(R.id.btn_regisguard)
-//        ContinueButton.setOnClickListener {
-//            val intent = Intent(this, RegistrationOldCompleteActivity::class.java)
-//            startActivity(intent) // 다음 액티비티 시작
-//            finish() // 현재 액티비티 종료
-//        }
 
         // BackButton 이벤트 처리
         val BackButton = findViewById<ImageView>(R.id.iv_registration_old_back)
@@ -43,10 +37,6 @@ class RegistrationOldActivity : AppCompatActivity() {
             finish() // 현재 액티비티 종료
         }
 
-        // 버튼 클릭 리스너 설정
-        btnRegisguard.setOnClickListener {
-            showDialog()
-        }
 
         // EditText의 텍스트 변경 감지 리스너 설정
         etGuardianEmail.addTextChangedListener(object : TextWatcher {
@@ -60,8 +50,26 @@ class RegistrationOldActivity : AppCompatActivity() {
 
                 // 버튼 활성화/비활성화 설정
                 btnRegisguard.isEnabled = isInputNotEmpty
+
+                // 배경색 변경
+                if (isInputNotEmpty) {
+                    btnRegisguard.backgroundTintList =
+                        ContextCompat.getColorStateList(this@RegistrationOldActivity, R.color.main_color)
+                } else {
+                    // 입력이 없을 경우 기본 배경색으로 설정
+                    btnRegisguard.backgroundTintList =
+                        ContextCompat.getColorStateList(this@RegistrationOldActivity, R.color.gray2)
+                }
+
+                // 버튼 클릭 리스너 설정
+                btnRegisguard.setOnClickListener {
+                    if (btnRegisguard.isEnabled) {
+                        showDialog()
+                    }
+                }
             }
         })
+
 
     }
 
