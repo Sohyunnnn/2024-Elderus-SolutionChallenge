@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatButton
 
-class signUpGuardianCompleteActivity : AppCompatActivity() {
+class SignUpGuardianCompleteActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up_guardian_complete)

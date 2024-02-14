@@ -4,7 +4,6 @@ import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.AppCompatButton
@@ -14,8 +13,7 @@ class RegistrationGuardianActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration_guardian)
 
-        var btnRegisOld : Button
-        btnRegisOld = findViewById(R.id.btn_regisold)
+        var btnRegisOld : AppCompatButton = findViewById(R.id.btn_regisold)
 
         btnRegisOld.setOnClickListener {
             showDialog()
@@ -30,7 +28,7 @@ class RegistrationGuardianActivity : AppCompatActivity() {
 
         val BackButton = findViewById<ImageView>(R.id.iv_regi_guardian_back)
         BackButton.setOnClickListener {
-            val intent = Intent(this, signUpGuardianCompleteActivity::class.java)
+            val intent = Intent(this, SignUpGuardianCompleteActivity::class.java)
             startActivity(intent) // 다음 액티비티 시작
             finish() // 현재 액티비티 종료
         }
