@@ -8,7 +8,6 @@ import android.text.TextWatcher
 import android.util.Patterns
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.content.ContextCompat
 
@@ -88,7 +87,7 @@ class SignUpGuardianActivity : AppCompatActivity() {
         }
 
         GuardiancontinueButton.setOnClickListener {
-            val intent = Intent(this, signUpGuardianCompleteActivity::class.java)
+            val intent = Intent(this, SignUpGuardianCompleteActivity::class.java)
             startActivity(intent) // 다음 액티비티 시작
             finish() // 현재 액티비티 종료
         }

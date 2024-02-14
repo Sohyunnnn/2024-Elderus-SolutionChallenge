@@ -65,6 +65,7 @@
             android:layout_marginTop="104dp"
             android:padding="20dp"
             android:background="@drawable/login_edit_text"
+            android:backgroundTint="@color/gray3"
             android:layout_marginHorizontal="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -80,12 +81,13 @@
                 tools:ignore="MissingConstraints">
 
             <TextView
+                android:id="@+id/tv_title_senior"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.elderus.Heading2"
                 android:text="Senior" />
             <TextView
-                android:id="@+id/tv_senior_Description"
+                android:id="@+id/tv_senior_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -112,6 +114,7 @@
         android:layout_marginTop="28dp"
         android:padding="20dp"
         android:background="@drawable/login_edit_text"
+        android:backgroundTint="@color/gray3"
         android:layout_marginHorizontal="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -125,6 +128,7 @@
             tools:ignore="MissingConstraints">
 
             <TextView
+                android:id="@+id/tv_title_guardian"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.elderus.Heading2"
