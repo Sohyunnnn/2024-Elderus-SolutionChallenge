@@ -17,6 +17,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -109,22 +110,32 @@ class HospitalFragment : Fragment(), OnMapReadyCallback {
             )
         )
 
+        Log.d("@@HospitalFragment", "Sending request to API: $request")
+
         val call = service.searchNearby(request)
         call.enqueue(object : Callback<SearchResponse> {
             override fun onResponse(call: Call<SearchResponse>, response: Response<SearchResponse>) {
                 if (response.isSuccessful) {
                     val places = response.body()?.places ?: emptyList()
                     Log.d("@@HospitalFragment", "Number of hospitals found: ${places.size}")
+
                     places.forEach { place ->
-                        Log.d("@@HospitalFragment", "Found place: ${place.displayName.text}")
+                        place.location?.let { location ->
+                            // 위치 정보를 로그로 출력
+                            Log.d("@@HospitalFragment", "Found place: ${place.displayName.text}, location: $location")
+                            // 병원의 위치를 마커로 표시
+                            googleMap?.addMarker(MarkerOptions().position(LatLng(location.latitude, location.longitude)).title(place.displayName.text))
+                        } ?: Log.e("@@HospitalFragment", "Location is null for place: ${place.displayName.text}")
                     }
                 } else {
-                    Log.e("@@HospitalFragment", "API call failed with response code: ${response.code()}")
+                    // API 응답 실패를 로그로 출력
+                    Log.e("@@HospitalFragment", "API call failed with response code: ${response.code()}, message: ${response.message()}")
                 }
             }
 
             override fun onFailure(call: Call<SearchResponse>, t: Throwable) {
-                Log.e("HospitalFragment", "API call failed with error: ${t.message}")
+                // API 호출 실패를 로그로 출력
+                Log.e("@@HospitalFragment", "API call failed with error: ${t.message}")
             }
         })
     }

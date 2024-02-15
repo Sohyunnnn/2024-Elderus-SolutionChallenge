@@ -25,8 +25,15 @@ data class SearchResponse(
 )
 
 data class Place(
-    val displayName: DisplayName
+    val displayName: DisplayName,
+    val location: LatLng
 )
+
+data class LatLng(
+    val latitude: Double,
+    val longitude: Double
+)
+
 
 data class DisplayName(
     val text: String,
