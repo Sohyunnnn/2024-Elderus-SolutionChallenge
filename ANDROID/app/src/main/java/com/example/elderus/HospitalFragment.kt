@@ -49,14 +49,29 @@ class HospitalFragment : Fragment(), OnMapReadyCallback {
         super.onViewCreated(view, savedInstanceState)
 
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as? SupportMapFragment
-        mapFragment?.getMapAsync(this)
+        mapFragment?.getMapAsync { googleMap ->
+            this.googleMap = googleMap
+            if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+                googleMap.isMyLocationEnabled = true
+                getCurrentLocation()
+            } else {
+                ActivityCompat.requestPermissions(requireActivity(),
+                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                    1)
+            }
+        }
+    }
 
+    private fun getCurrentLocation() {
         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION)
             != PackageManager.PERMISSION_GRANTED) {
+            // 위치 권한이 없을 때 권한 요청
             ActivityCompat.requestPermissions(requireActivity(),
                 arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
                 1)
         } else {
+            // 위치 권한이 있을 때 위치 정보 가져오기
             fusedLocationClient.lastLocation
                 .addOnSuccessListener { location ->
                     location?.let {
@@ -67,6 +82,8 @@ class HospitalFragment : Fragment(), OnMapReadyCallback {
                 }
         }
     }
+
+
 
 
 
