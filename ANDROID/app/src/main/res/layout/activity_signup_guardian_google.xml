@@ -4,6 +4,95 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignupGuardianGoogleActivity">
+    tools:context=".SignupGuardianGoogleActivity"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_back"/>
+        <View
+            android:layout_width="8dp"
+            android:layout_height="0dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create senior account"
+            android:textSize="20dp"
+            android:textStyle="bold|normal"
+            android:padding="16sp" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/please_ente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/please_enter_your_personal_information_guardian"
+        android:textAppearance="@style/TextAppearance.elderus.Title_Bold"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Toolbar"
+        android:layout_marginTop="36dp" />
+
+
+
+    <TextView
+        android:id="@+id/phone_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="#767676"
+        app:layout_constraintTop_toBottomOf="@id/please_ente"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Phone number"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="16dp"
+        />
+
+    <EditText
+        android:id="@+id/phone_txt"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:background="@drawable/login_edit_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/phone_num"
+        android:paddingLeft="16dp"
+        android:hint="Please enter a number only"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        />
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_signup_old"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:text="Continue"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textAppearance="@style/TextAppearance.elderus.Title_Medium"
+        android:background="@drawable/btn_sign_in"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phone_txt"
+        android:layout_marginTop="379dp"
+        android:layout_marginHorizontal="16dp"
+        android:backgroundTint="#DADADA"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
