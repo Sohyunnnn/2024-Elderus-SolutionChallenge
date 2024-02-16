@@ -16,7 +16,7 @@ class RegistrationOldCompleteActivity : AppCompatActivity() {
         startButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent) // 메인 엑티비티 시작
-            finish() // 현재 액티비티 종료
+//            finish() // 현재 액티비티 종료
         }
 
         val BackButton = findViewById<ImageView>(R.id.iv_regi_old_complete)

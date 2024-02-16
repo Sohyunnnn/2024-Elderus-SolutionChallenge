@@ -21,8 +21,8 @@ class SignUpGuardianCompleteActivity : AppCompatActivity() {
 
         val BackButton = findViewById<ImageView>(R.id.iv_complete_guardian_back)
         BackButton.setOnClickListener {
-            val intent = Intent(this, SignUpGuardianActivity::class.java)
-            startActivity(intent) // 다음 액티비티 시작
+//            val intent = Intent(this, SignUpGuardianActivity::class.java)
+//            startActivity(intent) // 다음 액티비티 시작
             finish() // 현재 액티비티 종료
         }
     }

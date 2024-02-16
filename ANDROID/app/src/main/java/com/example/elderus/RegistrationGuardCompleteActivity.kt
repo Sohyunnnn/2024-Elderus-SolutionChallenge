@@ -14,15 +14,15 @@ class RegistrationGuardCompleteActivity : AppCompatActivity() {
 
         val StartButton = findViewById<AppCompatButton>(R.id.btn_regisold_complete)
         StartButton.setOnClickListener {
-//            val intent = Intent(this, ConditionFragment::class.java) // ConditionFragment로 변경
-//            startActivity(intent) // 다음 액티비티 시작
-//            finish() // 현재 액티비티 종료
+            val intent = Intent(this, GuardianMainActivity::class.java)
+            startActivity(intent) // 다음 액티비티 시작
+            finish() // 현재 액티비티 종료
         }
 
         val BackButton = findViewById<ImageView>(R.id.iv_regi_guardian_complete)
         BackButton.setOnClickListener {
-            val intent = Intent(this, RegistrationGuardianActivity::class.java)
-            startActivity(intent) // 다음 액티비티 시작
+//            val intent = Intent(this, RegistrationGuardianActivity::class.java)
+//            startActivity(intent) // 다음 액티비티 시작
             finish() // 현재 액티비티 종료
         }
     }
