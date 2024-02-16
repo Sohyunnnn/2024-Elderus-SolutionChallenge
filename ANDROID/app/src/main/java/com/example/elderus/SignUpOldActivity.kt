@@ -106,14 +106,14 @@ class SignUpOldActivity : AppCompatActivity() {
         continueButton.setOnClickListener {
             val intent = Intent(this, SignUpOldCompleteActivity::class.java)
             startActivity(intent) // 다음 액티비티 시작
-            finish() // 현재 액티비티 종료
+//            finish() // 현재 액티비티 종료
         }
 
         val BackButton = findViewById<ImageView>(R.id.iv_sign_up_old_back)
         BackButton.setOnClickListener {
             // 다른 액티비티로 이동하는 Intent 생성
-            val intent = Intent(this, SigninTypeActivity::class.java)
-            startActivity(intent) // 다음 액티비티 시작
+//            val intent = Intent(this, SigninTypeActivity::class.java)
+//            startActivity(intent) // 다음 액티비티 시작
             finish() // 현재 액티비티 종료
         }
     }
