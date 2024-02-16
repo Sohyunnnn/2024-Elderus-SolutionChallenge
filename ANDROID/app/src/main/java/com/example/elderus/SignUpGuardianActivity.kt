@@ -89,7 +89,7 @@ class SignUpGuardianActivity : AppCompatActivity() {
         GuardiancontinueButton.setOnClickListener {
             val intent = Intent(this, SignUpGuardianCompleteActivity::class.java)
             startActivity(intent) // 다음 액티비티 시작
-            finish() // 현재 액티비티 종료
+//            finish() // 현재 액티비티 종료
         }
 
 
