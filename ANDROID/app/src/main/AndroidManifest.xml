@@ -17,6 +17,12 @@
         android:theme="@style/Theme.Elderus"
         tools:targetApi="31">
         <activity
+            android:name=".SignupGuardianGoogleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUpTypeActivity"
+            android:exported="false" />
+        <activity
             android:name=".SignUpGuardianCompleteActivity"
             android:exported="false" />
         <activity
