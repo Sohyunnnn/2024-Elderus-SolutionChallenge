@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpTypeActivity"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/white"
+        android:elevation="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_sign_up_old_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_back"/>
+        <View
+            android:layout_width="8dp"
+            android:layout_height="0dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create senior account"
+            android:textSize="20dp"
+            android:textStyle="bold|normal" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/gray2"
+        app:layout_constraintStart_toStartOf="@id/Toolbar"
+        app:layout_constraintTop_toBottomOf="@id/Toolbar"/>
+
+
+    <TextView
+        android:id="@+id/tv_google_account_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Google acount information"
+        android:textAppearance="@style/TextAppearance.elderus.Subtitle_Medium"
+        android:textColor="@color/gray1"
+        android:layout_marginTop="36dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintStart_toStartOf="@id/Toolbar"
+        app:layout_constraintTop_toBottomOf="@id/Toolbar"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/information_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:padding="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_google_account_info"
+        android:background="@drawable/btn_sign_in"
+        android:backgroundTint="@color/gray3">
+
+        <TextView
+            android:id="@+id/tv_family_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Family name"
+            android:textAppearance="@style/TextAppearance.elderus.Subtitle_Medium"
+            android:textColor="@color/gray1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tv_family_name_google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ho"
+            android:textAppearance="@style/TextAppearance.elderus.Subtitle_Medium"
+            android:layout_marginLeft="18dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_family_name"
+            />
+
+        <TextView
+            android:id="@+id/tv_given_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Given name"
+            android:textAppearance="@style/TextAppearance.elderus.Subtitle_Medium"
+            android:textColor="@color/gray1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_family_name_google" />
+
+        <TextView
+            android:id="@+id/tv_given_name_google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jabo"
+            android:textAppearance="@style/TextAppearance.elderus.Subtitle_Medium"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toEndOf="@+id/tv_given_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_family_name_google"
+            />
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textAppearance="@style/TextAppearance.elderus.Subtitle_Medium"
+            android:textColor="@color/gray1"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_given_name_google"
+            />
+
+        <TextView
+            android:id="@+id/tv_email_google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="gmail@gmail.com"
+            android:textAppearance="@style/TextAppearance.elderus.Subtitle_Medium"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toEndOf="@+id/tv_email"
+            app:layout_constraintTop_toBottomOf="@+id/tv_given_name_google"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_account_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please select a account type"
+        android:textAppearance="@style/TextAppearance.elderus.Title_Bold"
+        android:layout_marginTop="36dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/information_box"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btn_type_senior"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:padding="20dp"
+        android:background="@drawable/login_edit_text"
+        android:backgroundTint="@color/gray3"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_account_type">
+
+        <LinearLayout
+            android:id="@+id/text_senior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="@id/btn_type_senior"
+            app:layout_constraintTop_toTopOf="@id/btn_type_senior"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/tv_title_senior"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.elderus.Heading2"
+                android:text="Senior" />
+            <TextView
+                android:id="@+id/tv_senior_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="27dp"
+                android:textAppearance="@style/TextAppearance.elderus.Subtitle_Medium"
+                android:textColor="@color/gray1"
+                android:text="You take care of your health \n with CCTV." />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_type_senior"
+            app:layout_constraintTop_toTopOf="@id/btn_type_senior"
+            app:layout_constraintEnd_toEndOf="@id/btn_type_senior"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btn_type_gurdian"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:padding="20dp"
+        android:background="@drawable/login_edit_text"
+        android:backgroundTint="@color/gray3"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_type_senior">
+
+        <LinearLayout
+            android:id="@+id/text_gaurdian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/tv_title_guardian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.elderus.Heading2"
+                android:text="Guardian" />
+            <TextView
+                android:id="@+id/tv_guardian_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="27dp"
+                android:textAppearance="@style/TextAppearance.elderus.Subtitle_Medium"
+                android:textColor="@color/gray1"
+                android:text="You check the health \n of the senior."
+                />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_type_gurdian"
+            android:layout_marginTop="32dp"
+            app:layout_constraintTop_toTopOf="@id/btn_type_gurdian"
+            app:layout_constraintEnd_toEndOf="@id/btn_type_gurdian"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_continue"
+        android:layout_width="328dp"
+        android:layout_height="64dp"
+        android:text="Continue"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_sign_in"
+        android:textAppearance="@style/TextAppearance.elderus.Title_Medium"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_type_gurdian"
+        android:layout_marginTop="21dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
