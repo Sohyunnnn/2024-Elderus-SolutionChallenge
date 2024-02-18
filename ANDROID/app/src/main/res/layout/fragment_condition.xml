@@ -3,13 +3,275 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ConditionFragment"
-    android:id="@+id/fragment_condition">
+    android:background="@color/white">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="condition_fragment" />
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="79dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_add_guardian"
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:textColor="@color/gray1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="112dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textAllCaps="false"
+            android:text="Guardian : Hoja Bo"
+            android:background="@drawable/badge"
+            />
+        <!--android:background="@drawable/add_guardian"
+            android:text="@string/btn_add_guardian"-->
+
+        <TextView
+            android:id="@+id/tv_hello_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello, Yongja Ko!"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_add_guardian"
+            android:textAppearance="@style/TextAppearance.elderus.Title_Medium"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please check your condition today"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@id/tv_hello_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_hello_name"
+            />
+
+        <TextView
+            android:id="@+id/tv_status_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yongja Ko"
+            android:layout_marginTop="43dp"
+            app:layout_constraintStart_toStartOf="@id/tv_hello_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_hello_name"
+            android:textAppearance="@style/TextAppearance.elderus.Heading2"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="'s condition"
+            android:layout_marginTop="48dp"
+            android:layout_marginLeft="2dp"
+            app:layout_constraintStart_toEndOf="@id/tv_status_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_hello_name"
+            android:textAppearance="@style/TextAppearance.elderus.Title_Medium"
+
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fall_result"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:padding="20dp"
+            android:background="@drawable/login_edit_text"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_status_name"
+            android:backgroundTint="#2375D6">
+
+            <LinearLayout
+                android:id="@+id/fall_result_linear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/fall_result"
+                app:layout_constraintTop_toTopOf="@id/fall_result"
+                app:layout_constraintEnd_toEndOf="@id/fall_result"
+                android:layout_marginLeft="111.5dp"
+                tools:ignore="MissingConstraints">
+
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:background="@drawable/emoji_people"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CCTV"
+                    android:textColor="@color/white"
+                    android:textAppearance="@style/TextAppearance.elderus.Caption2"
+                    android:textSize="13sp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="  No fall"
+                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.elderus.Subtitle_Medium"/>
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/smile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/condition_smile"
+                app:layout_constraintTop_toBottomOf="@id/fall_result_linear"
+                app:layout_constraintStart_toStartOf="@id/fall_result"
+                app:layout_constraintEnd_toEndOf="@id/fall_result"
+                android:layout_marginTop="24dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Good"
+                android:textAppearance="@style/TextAppearance.elderus.Heading1"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/smile"
+                app:layout_constraintStart_toStartOf="@id/fall_result"
+                app:layout_constraintEnd_toEndOf="@id/fall_result"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fall_result_dan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:padding="20dp"
+            android:background="@drawable/login_edit_text"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_status_name"
+            android:backgroundTint="#CA3000"
+            android:visibility="invisible">
+
+            <LinearLayout
+                android:id="@+id/fall_result_dan_linear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/fall_result_dan"
+                app:layout_constraintTop_toTopOf="@id/fall_result_dan"
+                app:layout_constraintEnd_toEndOf="@id/fall_result_dan"
+                android:layout_marginLeft="111.5dp"
+                tools:ignore="MissingConstraints">
+
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:background="@drawable/emoji_people"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CCTV"
+                    android:textColor="@color/white"
+                    android:textAppearance="@style/TextAppearance.elderus.Caption2"
+                    android:textSize="13sp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="  Fall detected"
+                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.elderus.Subtitle_Medium"/>
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/fall_image"
+                android:layout_width="296dp"
+                android:layout_height="164dp"
+                app:layout_constraintTop_toBottomOf="@id/fall_result_dan_linear"
+                app:layout_constraintStart_toStartOf="@id/fall_result_dan"
+                app:layout_constraintEnd_toEndOf="@id/fall_result_dan"
+                android:background="@drawable/helpbox"
+                android:layout_marginTop="8dp"
+                />
+            
+            <TextView
+                android:id="@+id/txt_dan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dangerous!"
+                android:textAppearance="@style/TextAppearance.elderus.Heading1"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/fall_image"
+                app:layout_constraintStart_toStartOf="@id/fall_result_dan"
+                app:layout_constraintEnd_toEndOf="@id/fall_result_dan"
+                android:layout_marginTop="24dp"/>
+            
+            <Button
+                android:id="@+id/btn_911"
+                android:layout_width="296dp"
+                android:layout_height="60dp"
+                app:layout_constraintTop_toBottomOf="@id/txt_dan"
+                app:layout_constraintStart_toStartOf="@id/fall_result_dan"
+                app:layout_constraintEnd_toEndOf="@id/fall_result_dan"
+                android:backgroundTint="@color/white"
+                android:text="Call 911"
+                android:textColor="#CA3000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"/>
+
+
+            <TextView
+                android:id="@+id/fall_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/btn_911"
+                app:layout_constraintStart_toStartOf="@id/fall_result_dan"
+                app:layout_constraintEnd_toEndOf="@+id/fall_result_dan"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:layout_marginTop="40dp"
+                android:text="It's okay now. (Condition change)"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/btn_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="실험"
+            />
+
+
+        
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
