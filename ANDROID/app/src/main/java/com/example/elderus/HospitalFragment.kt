@@ -68,7 +68,8 @@ class HospitalFragment : Fragment(), OnMapReadyCallback {
                 if (hospitalInfo != null) {
                     val builder = AlertDialog.Builder(requireContext())
                     builder.setTitle("병원 정보")
-                    builder.setMessage("병원 이름: ${hospitalInfo.name}\n위치: ${hospitalInfo.position}\n주소: ${hospitalInfo.address}\n전화번호: ${hospitalInfo.phoneNumber}")
+//                    builder.setMessage("병원 이름: ${hospitalInfo.name}\n위치: ${hospitalInfo.position}\n주소: ${hospitalInfo.address}\n전화번호: ${hospitalInfo.phoneNumber}")
+                    builder.setMessage("병원 이름: ${hospitalInfo.name}\n위치: ${hospitalInfo.position}")
                     builder.setPositiveButton("확인") { dialog, _ ->
                         dialog.dismiss()
                     }
@@ -141,10 +142,18 @@ class HospitalFragment : Fragment(), OnMapReadyCallback {
                         place.location?.let { location ->
                             // 위치 정보를 로그로 출력
                             Log.d("@@HospitalFragment", "Found place: ${place.displayName.text}, location: $location")
-                            // 병원의 위치를 마커로 표시
-                            googleMap?.addMarker(MarkerOptions().position(LatLng(location.latitude, location.longitude)).title(place.displayName.text))
 
+                            // 병원 정보를 생성
+                            val hospitalInfo = HospitalInfo(
+                                name = place.displayName.text,
+                                position = LatLng(location.latitude, location.longitude),
+                                address = "",     // 여기에 실제 주소 정보를 설정해야 합니다.
+                                phoneNumber = ""  // 여기에 실제 전화번호 정보를 설정해야 합니다.
+                            )
 
+                            // 병원의 위치를 마커로 표시하고, 마커의 tag에 병원 정보를 저장
+                            val marker = googleMap?.addMarker(MarkerOptions().position(hospitalInfo.position).title(hospitalInfo.name))
+                            marker?.tag = hospitalInfo
                         } ?: Log.e("@@HospitalFragment", "Location is null for place: ${place.displayName.text}")
                     }
                 } else {

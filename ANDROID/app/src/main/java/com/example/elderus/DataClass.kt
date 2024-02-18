@@ -42,7 +42,7 @@ data class DisplayName(
 
 data class HospitalInfo(
     val name: String,
-    val position: LatLng,
+    val position: com.google.android.gms.maps.model.LatLng,
     val address: String,
     val phoneNumber: String
 )
