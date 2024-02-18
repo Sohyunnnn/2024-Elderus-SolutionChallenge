@@ -18,7 +18,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/hospitalInfo"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:background="@drawable/login_edit_text"
@@ -51,7 +51,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_call"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_hospital"
                 android:layout_marginTop="28dp"
