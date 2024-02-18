@@ -1,13 +1,19 @@
 package com.example.elderus
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.AppCompatButton
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -31,6 +37,10 @@ class HospitalFragment : Fragment(), OnMapReadyCallback {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private var googleMap: GoogleMap? = null
 
+    private lateinit var CallButton : AppCompatButton
+
+    private var selectedPhoneNumber: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
@@ -41,10 +51,13 @@ class HospitalFragment : Fragment(), OnMapReadyCallback {
     }
 
     override fun onCreateView(
+
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_hospital, container, false)
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -62,26 +75,61 @@ class HospitalFragment : Fragment(), OnMapReadyCallback {
                     arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
                     1)
             }
+
+            CallButton = view.findViewById(R.id.btn_call)
+
+            // CallButton 클릭 이벤트 설정
+            CallButton.setOnClickListener {
+                if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    // 권한이 없는 경우 권한을 요청
+                    ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.CALL_PHONE),
+                        REQUEST_CALL_PERMISSION
+                    )
+                } else {
+                    // 권한이 있는 경우 전화 걸기
+                    selectedPhoneNumber?.let { makePhoneCall(it) }
+                }
+            }
+
+
             // 마커 클릭 이벤트 핸들러 설정
             googleMap.setOnMarkerClickListener { marker ->
-                val hospitalInfo = marker.tag as? HospitalInfo
-                if (hospitalInfo != null) {
-                    val builder = AlertDialog.Builder(requireContext())
-                    builder.setTitle("병원 정보")
-                    builder.setMessage("병원 이름: ${hospitalInfo.name}\n위치: ${hospitalInfo.position}\n주소: ${hospitalInfo.address}\n전화번호: ${hospitalInfo.phoneNumber}")
-//                    builder.setMessage("병원 이름: ${hospitalInfo.name}\n위치: ${hospitalInfo.position}")
-                    builder.setPositiveButton("확인") { dialog, _ ->
-                        dialog.dismiss()
-                    }
-                    builder.show()
+                // 병원 정보 가져오기
+                val hospitalInfo = marker?.tag as? HospitalInfo
+                hospitalInfo?.let { info ->
+                    // 레이아웃 찾기
+                    val layout = view.findViewById<ConstraintLayout>(R.id.hospitalInfo)
+                    // 병원 정보 설정
+                    val tvHospitalName = layout.findViewById<TextView>(R.id.tvHospitalName)
+                    val tvHospitalAddress = layout.findViewById<TextView>(R.id.tvHospitalAddress)
+
+                    val callButton = layout.findViewById<TextView>(R.id.btn_call)
+
+                    selectedPhoneNumber = info.phoneNumber
+
+                    tvHospitalName.text = info.name
+                    tvHospitalAddress.text = info.address
+                    // 레이아웃 보이게 하기
+                    layout.visibility = View.VISIBLE
                 }
 
-                true
+                true // 마커 클릭 이벤트 처리 완료
             }
+
 
 
         }
     }
+
+
+    // 전화 걸기
+    private fun makePhoneCall(phoneNumber: String) {
+        val intent = Intent(Intent.ACTION_CALL)
+        intent.data = Uri.parse("tel:$phoneNumber")
+        startActivity(intent)
+    }
+
+
 
     private fun getCurrentLocation() {
         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION)
@@ -168,4 +216,10 @@ class HospitalFragment : Fragment(), OnMapReadyCallback {
             }
         })
     }
+
+    companion object {
+        const val REQUEST_CALL_PERMISSION = 1
+    }
 }
+
+
