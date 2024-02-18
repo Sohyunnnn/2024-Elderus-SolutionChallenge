@@ -27,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
 
         btnSignIn.setOnClickListener {
             // 다음 액티비티로 이동
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, GuardianMainActivity::class.java)
             startActivity(intent)
             finish()
         }
