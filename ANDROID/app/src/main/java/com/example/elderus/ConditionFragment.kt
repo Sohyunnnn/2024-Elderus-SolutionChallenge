@@ -2,6 +2,7 @@ package com.example.elderus
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.os.AsyncTask
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -48,6 +49,8 @@ class ConditionFragment : Fragment() {
     private lateinit var TextView: TextView
     private lateinit var fallDanView: ConstraintLayout
     private lateinit var testBtn : Button
+    private lateinit var fallText : TextView
+    private lateinit var checkText : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,27 +70,48 @@ class ConditionFragment : Fragment() {
         fallDanView = view.findViewById(R.id.fall_result_dan)
         fallimageView = view.findViewById(R.id.fall_image)
         TextView = view.findViewById(R.id.fall_check)
+        fallText = view.findViewById(R.id.tv_hello_name)
+        checkText = view.findViewById(R.id.txt_pls_check)
 
         testBtn = view.findViewById(R.id.btn_test)
 /*
         if(MyFirebaseMessagingService.isMessageReceived){
             fallDanView.visibility = View.VISIBLE
             loadFirstImageToImageView(fallimageView)
+            fallText.text = "It's an emergency."
+            fallText.setTextColor(Color.parseColor("#CA3000"))
+            checkText.visibility = View.GONE
+            fallText.setTextSize(24F)
+
             TextView.setOnClickListener {
-                fallimageView.visibility = View.GONE
-                MyFirebaseMessagingService.isMessageReceived = false
+                fallDanView.visibility = View.GONE
+                fallText.text = "Hello, Yongja Ko!"
+                fallText.setTextColor(Color.BLACK)
+                fallText.setTextSize(20F)
+                checkText.visibility = View.VISIBLE
             }
         }*/
 
         testBtn.setOnClickListener {
             fallDanView.visibility = View.VISIBLE
             loadFirstImageToImageView(fallimageView)
+
+            fallText.text = "It's an emergency."
+            fallText.setTextColor(Color.parseColor("#CA3000"))
+            checkText.visibility = View.GONE
+            fallText.setTextSize(24F)
+
+
             TextView.setOnClickListener {
-                fallimageView.visibility = View.GONE
+                fallDanView.visibility = View.GONE
+                fallText.text = "Hello, Yongja Ko!"
+                fallText.setTextColor(Color.BLACK)
+                fallText.setTextSize(20F)
+                checkText.visibility = View.VISIBLE
             }
         }
 
-
+//
 
         return view
     }
@@ -98,7 +122,7 @@ class ConditionFragment : Fragment() {
 
         storageRef3.listAll().addOnSuccessListener { result ->
             if(result.items.isNotEmpty()){
-                result.items.last().downloadUrl.addOnSuccessListener { uri->
+                result.items.first().downloadUrl.addOnSuccessListener { uri->
                     Glide.with(imageView.context)
                         .load(uri)
                         .into(imageView)
