@@ -78,9 +78,17 @@ class ConditionFragment : Fragment() {
         if(MyFirebaseMessagingService.isMessageReceived){
             fallDanView.visibility = View.VISIBLE
             loadFirstImageToImageView(fallimageView)
+            fallText.text = "It's an emergency."
+            fallText.setTextColor(Color.parseColor("#CA3000"))
+            checkText.visibility = View.GONE
+            fallText.setTextSize(24F)
+
             TextView.setOnClickListener {
-                fallimageView.visibility = View.GONE
-                MyFirebaseMessagingService.isMessageReceived = false
+                fallDanView.visibility = View.GONE
+                fallText.text = "Hello, Yongja Ko!"
+                fallText.setTextColor(Color.BLACK)
+                fallText.setTextSize(20F)
+                checkText.visibility = View.VISIBLE
             }
         }*/
 
