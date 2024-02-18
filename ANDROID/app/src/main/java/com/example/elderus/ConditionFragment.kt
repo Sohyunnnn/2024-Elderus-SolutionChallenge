@@ -111,7 +111,7 @@ class ConditionFragment : Fragment() {
             }
         }
 
-
+//
 
         return view
     }
