@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_condition_guardian"
+        android:title="Condition"
+        android:enabled="true"
+        android:icon="@drawable/ic_condition" />
+
+    <item
+        android:id="@+id/nav_hospital_guardian"
+        android:title="Hospital"
+        android:enabled="true"
+        android:icon="@drawable/ic_hospital" />
+
+    <item
+        android:id="@+id/nav_my_page_guardian"
+        android:title="MyPage"
+        android:enabled="true"
+        android:icon="@drawable/ic_my_page" />
+
+</menu>

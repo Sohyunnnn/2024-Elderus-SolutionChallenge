@@ -17,18 +17,51 @@
         android:theme="@style/Theme.Elderus"
         tools:targetApi="31">
         <activity
-            android:name=".RegistrationOldActivity"
+            android:name=".GuardianMainActivity"
             android:exported="false" />
         <activity
-            android:name=".RegistrationGuardActivity"
+            android:name=".SignupGuardianGoogleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUpTypeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUpGuardianCompleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUpOldCompleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUpGuardianActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUpOldActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrationGuardianActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrationOldActivity"
             android:exported="false" />
         <activity
             android:name=".SigninTypeActivity"
             android:exported="false" />
         <activity
+            android:name=".RegistrationGuardCompleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrationOldCompleteActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashActivity"
             android:exported="true"
-            android:theme="@style/NoActionBarTheme" />
+            android:theme="@style/NoActionBarTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".SignupOldGoogleActivity"
             android:exported="false" />
@@ -66,19 +99,6 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <!--
- mainactivity가 2개인데요?? 그래서 일단 아래거 하나 주석 처리했습니다
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="${MAPS_API_KEY}" />
     </application>
 
 </manifest>

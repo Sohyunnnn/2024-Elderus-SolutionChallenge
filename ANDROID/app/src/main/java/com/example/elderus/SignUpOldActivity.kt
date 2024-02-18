@@ -2,7 +2,6 @@ package com.example.elderus
 
 import android.app.AlertDialog
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -11,38 +10,53 @@ import android.widget.CalendarView
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.content.ContextCompat
+import java.util.Calendar
 
-class SignupOldGoogleActivity : AppCompatActivity() {
+class SignUpOldActivity : AppCompatActivity() {
 
-
+    private lateinit var etEmail: EditText
+    private lateinit var etPassword: EditText
+    private lateinit var etCheckPassword: EditText
+    private lateinit var etFamilyName: EditText
+    private lateinit var etGivenName: EditText
     private lateinit var etPhoneNumber: EditText
     private lateinit var birthdayTextView: TextView
     private lateinit var continueButton: AppCompatButton
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup_old_google)
+        setContentView(R.layout.activity_sign_up_old)
 
         // 캘린더 이미지뷰를 찾아서 클릭 리스너를 설정합니다.
-        val calendarImageView = findViewById<ImageView>(R.id.iv_calendar)
+        val calendarImageView = findViewById<ImageView>(R.id.iv_calender)
         calendarImageView.setOnClickListener {
             // 클릭 이벤트가 발생했을 때 수행할 작업을 여기에 작성합니다.
             showCalendarDialog()
         }
 
         // EditText 및 DatePicker 입력 변경 감지
-        etPhoneNumber = findViewById(R.id.phone_txt)
+        etEmail = findViewById(R.id.et_email_input)
+        etPassword = findViewById(R.id.et_password_input)
+        etCheckPassword = findViewById(R.id.et_check_password_input)
+        etFamilyName = findViewById(R.id.et_fmaily_name)
+        etGivenName = findViewById(R.id.et_given_name)
+        etPhoneNumber = findViewById(R.id.et_phone_number)
         birthdayTextView = findViewById(R.id.birthday_txt)
-        continueButton = findViewById(R.id.btn_signup_old)
+        continueButton = findViewById(R.id.btn_sign_up_old_continue)
 
-
+        etEmail.addTextChangedListener(textWatcher)
+        etPassword.addTextChangedListener(textWatcher)
+        etCheckPassword.addTextChangedListener(textWatcher)
+        etFamilyName.addTextChangedListener(textWatcher)
+        etGivenName.addTextChangedListener(textWatcher)
         etPhoneNumber.addTextChangedListener(textWatcher)
         birthdayTextView.addTextChangedListener(textWatcher)
 
         updateContinueButtonState() // 초기 상태 설정
-
     }
 
     private val textWatcher = object : TextWatcher {
@@ -55,20 +69,30 @@ class SignupOldGoogleActivity : AppCompatActivity() {
         }
     }
 
-
-
     private fun updateContinueButtonState() {
         // 입력 필드에서 텍스트 가져오기
+        val email = etEmail.text.toString()
+        val password = etPassword.text.toString()
+        val checkPassword = etCheckPassword.text.toString()
+        val familyName = etFamilyName.text.toString()
+        val givenName = etGivenName.text.toString()
         val phoneNumber = etPhoneNumber.text.toString()
         val birthday = birthdayTextView.text.toString()
 
         // 모든 필드가 비어 있지 않은지 확인
-        val isNotEmptyFields =
+        val isNotEmptyFields = email.isNotBlank() &&
+                password.isNotBlank() &&
+                checkPassword.isNotBlank() &&
+                familyName.isNotBlank() &&
+                givenName.isNotBlank() &&
                 phoneNumber.isNotBlank() &&
                 birthday.isNotBlank()
 
+        // 유효성 검사를 통과하면 계속 버튼 활성화
+        val isValidEmail = Patterns.EMAIL_ADDRESS.matcher(email).matches()
+        val isPasswordMatch = password == checkPassword
 
-        val isContinueEnabled = isNotEmptyFields
+        val isContinueEnabled = isNotEmptyFields && isValidEmail && isPasswordMatch
 
         continueButton.isEnabled = isContinueEnabled
 
@@ -85,11 +109,11 @@ class SignupOldGoogleActivity : AppCompatActivity() {
 //            finish() // 현재 액티비티 종료
         }
 
-        val BackButton = findViewById<ImageView>(R.id.iv_back)
+        val BackButton = findViewById<ImageView>(R.id.iv_sign_up_old_back)
         BackButton.setOnClickListener {
             // 다른 액티비티로 이동하는 Intent 생성
-            val intent = Intent(this, SignUpTypeActivity::class.java)
-            startActivity(intent) // 다음 액티비티 시작
+//            val intent = Intent(this, SigninTypeActivity::class.java)
+//            startActivity(intent) // 다음 액티비티 시작
             finish() // 현재 액티비티 종료
         }
     }
@@ -131,7 +155,4 @@ class SignupOldGoogleActivity : AppCompatActivity() {
         val dialog = builder.create()
         dialog.show()
     }
-
-
-
 }
