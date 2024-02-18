@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -61,6 +62,23 @@ class HospitalFragment : Fragment(), OnMapReadyCallback {
                     arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
                     1)
             }
+            // 마커 클릭 이벤트 핸들러 설정
+            googleMap.setOnMarkerClickListener { marker ->
+                val hospitalInfo = marker.tag as? HospitalInfo
+                if (hospitalInfo != null) {
+                    val builder = AlertDialog.Builder(requireContext())
+                    builder.setTitle("병원 정보")
+                    builder.setMessage("병원 이름: ${hospitalInfo.name}\n위치: ${hospitalInfo.position}\n주소: ${hospitalInfo.address}\n전화번호: ${hospitalInfo.phoneNumber}")
+                    builder.setPositiveButton("확인") { dialog, _ ->
+                        dialog.dismiss()
+                    }
+                    builder.show()
+                }
+
+                true
+            }
+
+
         }
     }
 
@@ -125,6 +143,8 @@ class HospitalFragment : Fragment(), OnMapReadyCallback {
                             Log.d("@@HospitalFragment", "Found place: ${place.displayName.text}, location: $location")
                             // 병원의 위치를 마커로 표시
                             googleMap?.addMarker(MarkerOptions().position(LatLng(location.latitude, location.longitude)).title(place.displayName.text))
+
+
                         } ?: Log.e("@@HospitalFragment", "Location is null for place: ${place.displayName.text}")
                     }
                 } else {

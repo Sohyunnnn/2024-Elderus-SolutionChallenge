@@ -39,3 +39,10 @@ data class DisplayName(
     val text: String,
     val languageCode: String
 )
+
+data class HospitalInfo(
+    val name: String,
+    val position: LatLng,
+    val address: String,
+    val phoneNumber: String
+)

@@ -6,7 +6,7 @@ import retrofit2.http.Headers
 import retrofit2.http.POST
 
 interface PlacesApiService {
-    @Headers("Content-Type: application/json", "X-Goog-Api-Key: ${BuildConfig.MAPS_API_KEY}", "X-Goog-FieldMask: places.displayName,places.location")
+    @Headers("Content-Type: application/json", "X-Goog-Api-Key: ${BuildConfig.MAPS_API_KEY}", "X-Goog-FieldMask: places.displayName,places.location,places.formattedAddress,places.nationalPhoneNumber")
     @POST("v1/places:searchNearby")
     fun searchNearby(@Body body: SearchRequest): Call<SearchResponse>
 }
