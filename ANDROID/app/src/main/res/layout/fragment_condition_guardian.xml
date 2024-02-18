@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/btn_add_guardian"
+                    android:id="@+id/add_guardian"
                     android:layout_width="97dp"
                     android:layout_height="wrap_content"
                     android:textColor="@color/Secondary"
@@ -70,7 +70,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="8dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_add_guardian"
+                    app:layout_constraintTop_toBottomOf="@+id/add_guardian"
                     android:textAppearance="@style/TextAppearance.elderus.Title_Medium"
                     />
 
