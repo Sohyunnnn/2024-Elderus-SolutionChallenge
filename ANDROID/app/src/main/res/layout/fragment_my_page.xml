@@ -58,7 +58,7 @@
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/btn_log_in"
+            android:id="@+id/btn_log_out"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/line1"
@@ -93,7 +93,7 @@
             android:layout_width="wrap_content"
             android:layout_height="1dp"
             android:background="@color/gray3"
-            app:layout_constraintTop_toBottomOf="@+id/btn_log_in"
+            app:layout_constraintTop_toBottomOf="@+id/btn_log_out"
             app:layout_constraintStart_toStartOf="parent"/>
 
         <TextView
