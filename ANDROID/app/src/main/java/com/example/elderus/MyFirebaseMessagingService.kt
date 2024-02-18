@@ -11,7 +11,9 @@ import android.net.Uri
 import android.os.Build
 import android.os.IBinder
 import android.util.Log
+import android.widget.ImageView
 import androidx.annotation.RequiresApi
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
@@ -21,6 +23,10 @@ import com.google.firebase.messaging.remoteMessage
 
 class MyFirebaseMessagingService : FirebaseMessagingService() {
 
+    companion object{
+        var isMessageReceived = false
+    }
+
     override fun onNewToken(token: String) {
         //super.onNewToken(token)
         //FCM 토큰이 갱신되었을 때 필요한 작업 수행
@@ -29,13 +35,17 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onMessageReceived(message: RemoteMessage) {
-       // super.onMessageReceived(message)
+        super.onMessageReceived(message)
+        isMessageReceived = true
         //FCM 메시지 title과 body를 수신, sendNotification 메서드에 처리
         message.notification?.let { notification ->
             val title = notification.title
             val body = notification.body
             sendNotification(title, body)
         }
+
+
+
     }
 
     @RequiresApi(Build.VERSION_CODES.O)

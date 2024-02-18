@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
+import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -66,23 +67,7 @@ class MainActivity : AppCompatActivity() {
             .show()
     }
 
-    //알림 권한 요청
- /*   private val PERMISSION_REQUEST_NOTIFICATION = 1
-
-    private fun checkNotificationPermission(){
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATION)
-            != PackageManager.PERMISSION_GRANTED){ //권한 없는 경우 권한 요청
-            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
-                ActivityCompat.requestPermissions(this,
-                    arrayOf(Manifest.permission.POST_NOTIFICATIONS),
-                    PERMISSION_REQUEST_NOTIFICATION
-                )
-            }
-        }
-    }
-
-*/
-
+    //private lateinit var imageView : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
