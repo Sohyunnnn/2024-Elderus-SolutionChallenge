@@ -61,7 +61,7 @@ class MyPageFragment : Fragment() {
 
     private fun showCancellationDialog() {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setTitle("Are you sure you want to account cancellation?")
+        builder.setTitle("Account cancellation")
         builder.setMessage("If you select Yes, the account will be withdrawn, and the information so far cannot be recovered.")
         builder.setPositiveButton("Yes(Log out)") { dialog, which ->
             navigateToLoginActivity()
