@@ -1,6 +1,13 @@
 import java.util.Properties
 import java.io.FileInputStream
 
+fun getMapsApiKey(): String {
+    val properties = Properties()
+    properties.load(rootProject.file("local.properties").inputStream())
+    return properties.getProperty("MAPS_API_KEY")
+}
+
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -27,7 +34,11 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        
+
+        val mapsApiKey = getMapsApiKey()
+        buildConfigField("String", "MAPS_API_KEY", "\"${mapsApiKey}\"")
+
+
 
 
         buildTypes {
@@ -64,6 +75,8 @@ android {
 
 
     }
+
+
 
     dependencies {
         implementation("androidx.appcompat:appcompat:1.6.1")
@@ -107,5 +120,13 @@ android {
 // img_upload -> Glide
         implementation("com.github.bumptech.glide:glide:4.12.0")
         annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
+
+        //Retorfit
+
+        implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+        implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+
+
     }
+
 
