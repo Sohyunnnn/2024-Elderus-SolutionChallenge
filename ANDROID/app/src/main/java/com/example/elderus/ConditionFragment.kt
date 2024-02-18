@@ -28,16 +28,6 @@ import java.io.InputStream
 import java.net.HttpURLConnection
 import java.net.URL
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ConditionFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ConditionFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -54,10 +44,6 @@ class ConditionFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
@@ -73,8 +59,6 @@ class ConditionFragment : Fragment() {
         fallText = view.findViewById(R.id.tv_hello_name)
         checkText = view.findViewById(R.id.txt_pls_check)
 
-        testBtn = view.findViewById(R.id.btn_test)
-/*
         if(MyFirebaseMessagingService.isMessageReceived){
             fallDanView.visibility = View.VISIBLE
             loadFirstImageToImageView(fallimageView)
@@ -90,28 +74,10 @@ class ConditionFragment : Fragment() {
                 fallText.setTextSize(20F)
                 checkText.visibility = View.VISIBLE
             }
-        }*/
-
-        testBtn.setOnClickListener {
-            fallDanView.visibility = View.VISIBLE
-            loadFirstImageToImageView(fallimageView)
-
-            fallText.text = "It's an emergency."
-            fallText.setTextColor(Color.parseColor("#CA3000"))
-            checkText.visibility = View.GONE
-            fallText.setTextSize(24F)
-
-
-            TextView.setOnClickListener {
-                fallDanView.visibility = View.GONE
-                fallText.text = "Hello, Yongja Ko!"
-                fallText.setTextColor(Color.BLACK)
-                fallText.setTextSize(20F)
-                checkText.visibility = View.VISIBLE
-            }
         }
 
-//
+
+
 
         return view
     }
