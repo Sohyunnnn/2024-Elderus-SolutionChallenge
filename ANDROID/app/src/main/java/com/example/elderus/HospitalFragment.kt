@@ -68,8 +68,8 @@ class HospitalFragment : Fragment(), OnMapReadyCallback {
                 if (hospitalInfo != null) {
                     val builder = AlertDialog.Builder(requireContext())
                     builder.setTitle("병원 정보")
-//                    builder.setMessage("병원 이름: ${hospitalInfo.name}\n위치: ${hospitalInfo.position}\n주소: ${hospitalInfo.address}\n전화번호: ${hospitalInfo.phoneNumber}")
-                    builder.setMessage("병원 이름: ${hospitalInfo.name}\n위치: ${hospitalInfo.position}")
+                    builder.setMessage("병원 이름: ${hospitalInfo.name}\n위치: ${hospitalInfo.position}\n주소: ${hospitalInfo.address}\n전화번호: ${hospitalInfo.phoneNumber}")
+//                    builder.setMessage("병원 이름: ${hospitalInfo.name}\n위치: ${hospitalInfo.position}")
                     builder.setPositiveButton("확인") { dialog, _ ->
                         dialog.dismiss()
                     }
@@ -147,8 +147,8 @@ class HospitalFragment : Fragment(), OnMapReadyCallback {
                             val hospitalInfo = HospitalInfo(
                                 name = place.displayName.text,
                                 position = LatLng(location.latitude, location.longitude),
-                                address = "",     // 여기에 실제 주소 정보를 설정해야 합니다.
-                                phoneNumber = ""  // 여기에 실제 전화번호 정보를 설정해야 합니다.
+                                address = place.address,
+                                phoneNumber = place.phoneNumber
                             )
 
                             // 병원의 위치를 마커로 표시하고, 마커의 tag에 병원 정보를 저장

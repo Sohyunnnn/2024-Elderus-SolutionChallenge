@@ -1,5 +1,7 @@
 package com.example.elderus
 
+import com.google.gson.annotations.SerializedName
+
 data class SearchRequest(
     val includedTypes: List<String>,
     val maxResultCount: Int,
@@ -26,7 +28,9 @@ data class SearchResponse(
 
 data class Place(
     val displayName: DisplayName,
-    val location: LatLng
+    val location: LatLng,
+    @SerializedName("formattedAddress") val address: String,
+    @SerializedName("nationalPhoneNumber") val phoneNumber: String
 )
 
 data class LatLng(
@@ -43,6 +47,6 @@ data class DisplayName(
 data class HospitalInfo(
     val name: String,
     val position: com.google.android.gms.maps.model.LatLng,
-    val address: String,
-    val phoneNumber: String
+    val address: String?,
+    val phoneNumber: String?
 )
