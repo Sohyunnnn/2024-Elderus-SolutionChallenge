@@ -1,50 +1,32 @@
 package com.example.elderus
 
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
+import android.Manifest
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Color
-import android.os.AsyncTask
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.databinding.DataBindingUtil
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.google.firebase.Firebase
-import com.google.firebase.messaging.RemoteMessage
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.storage
-import kotlinx.coroutines.tasks.await
-import java.io.IOException
-import java.io.InputStream
-import java.net.HttpURLConnection
-import java.net.URL
 
 class ConditionFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    private var vi = com.google.android.material.R.id.layout
-
     private lateinit var fallimageView: ImageView
     private lateinit var TextView: TextView
     private lateinit var fallDanView: ConstraintLayout
-    private lateinit var testBtn : Button
     private lateinit var fallText : TextView
     private lateinit var checkText : TextView
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private lateinit var CallButton : Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -58,6 +40,19 @@ class ConditionFragment : Fragment() {
         TextView = view.findViewById(R.id.fall_check)
         fallText = view.findViewById(R.id.tv_hello_name)
         checkText = view.findViewById(R.id.txt_pls_check)
+
+        CallButton = view.findViewById(R.id.btn_911)
+
+        // CallButton 클릭 이벤트 설정
+        CallButton.setOnClickListener {
+            if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                // 권한이 없는 경우 권한을 요청
+                ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.CALL_PHONE), REQUEST_CALL_PERMISSION)
+            } else {
+                // 권한이 있는 경우 전화 걸기
+                makePhoneCall()
+            }
+        }
 
         if(MyFirebaseMessagingService.isMessageReceived){
             fallDanView.visibility = View.VISIBLE
@@ -76,13 +71,32 @@ class ConditionFragment : Fragment() {
             }
         }
 
-
-
-
         return view
     }
+
+    // 전화 걸기 권한 요청 결과 처리
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == REQUEST_CALL_PERMISSION) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // 권한 허용됨
+                makePhoneCall()
+            } else {
+                // 권한 거부됨
+                // 권한이 필요한 이유를 사용자에게 설명하거나 다른 조치를 취할 수 있음
+            }
+        }
+    }
+
+    // 전화 걸기
+    private fun makePhoneCall() {
+        val intent = Intent(Intent.ACTION_CALL)
+        intent.data = Uri.parse("tel:911")
+        startActivity(intent)
+    }
+
     //가장 최근 이미지 올리기
-    fun loadFirstImageToImageView(imageView: ImageView){
+    private fun loadFirstImageToImageView(imageView: ImageView){
         val storage = Firebase.storage
         val storageRef3 = storage.reference.child("images")
 
@@ -101,5 +115,7 @@ class ConditionFragment : Fragment() {
         }
     }
 
-
+    companion object {
+        private const val REQUEST_CALL_PERMISSION = 1
+    }
 }

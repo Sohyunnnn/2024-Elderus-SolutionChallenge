@@ -63,7 +63,7 @@ class MyPageFragment : Fragment() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setTitle("Account cancellation")
         builder.setMessage("If you select Yes, the account will be withdrawn, and the information so far cannot be recovered.")
-        builder.setPositiveButton("Yes(Log out)") { dialog, which ->
+        builder.setPositiveButton("Yes(account cancellation)") { dialog, which ->
             navigateToLoginActivity()
         }
         builder.setNegativeButton("No") { dialog, which ->
