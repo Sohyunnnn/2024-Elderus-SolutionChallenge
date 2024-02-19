@@ -31,4 +31,23 @@ Information
 
 - Putty
 - RealVNC Viewer
+
+## Step
+
+1. Turn on the raspberry pie connected to the camera and clone yolov5. 
+
+2. Put detect.py and best.pt in yolov5 folder. 
+
+3. Write the following commands.
+
+```
+
+python detect.py --weights best.py --source 0 --conf 0.7
+
+```
   
+## Test Video 
+
+
+https://github.com/GDSC-SWU/2024-Elderus-SolutionChallenge/assets/81478444/440d1526-394c-4a68-a88e-8d6680a79f45
+
