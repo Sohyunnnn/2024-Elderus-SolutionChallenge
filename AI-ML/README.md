@@ -42,7 +42,7 @@ Information
 
 ```
 
-python detect.py --weights best.py --source 0 --conf 0.7
+python detect.py --weights best.pt --source 0 --conf 0.7
 
 ```
   
