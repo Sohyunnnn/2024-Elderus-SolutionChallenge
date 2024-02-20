@@ -45,13 +45,15 @@ import time
 
 
 
-# Firebase Key Path
+# Firebase Key Path 
+# Enter the “Firebase Admin SDK” you use here
 cred = credentials.Certificate("firebase-adminsdk.json")
     
 # Firebase App init
+# Enter the 'firebase StorageBucket address and realtime database address' used here.
 firebase_admin.initialize_app(cred,{
-'storageBucket': 'fall-detection-c9475.appspot.com',
-'databaseURL': 'https://fall-detection-c9475-default-rtdb.firebaseio.com'
+'storageBucket': '',
+'databaseURL': ''
 })
 ref = db.reference('tokens')
 tokens = ref.get()
@@ -238,7 +240,7 @@ def run(
                         #    f.write(("%g " * len(line)).rstrip() % line + "\n")
 
                   #  if save_img or save_crop or view_img: 
-                    if cls == 0 or cls == 2 :
+                    if cls == 0 :
                         save_boar = True   # Add bbox to image
                         c = int(cls)  # integer class
                         label = None if hide_labels else (names[c] if hide_conf else f"{names[c]}")
