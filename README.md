@@ -18,7 +18,7 @@
 
 
 
-### ✌️ Contributors
+## ✌️ Contributors
 
 |Name|[Daeun Song](https://github.com/daeun6)|[Minji Koo]()|[Jeongyeon Lee]()|[Sohyun Park]()|
 |:---:|:---:|:---:|:---:|:---:|
