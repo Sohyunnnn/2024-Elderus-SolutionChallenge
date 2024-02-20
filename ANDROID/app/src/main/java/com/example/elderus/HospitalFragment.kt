@@ -152,9 +152,6 @@ class HospitalFragment : Fragment(), OnMapReadyCallback {
     }
 
 
-
-
-
     private fun searchNearbyHospitals(latitude: Double, longitude: Double) {
         val retrofit = Retrofit.Builder()
             .baseUrl("https://places.googleapis.com/")
