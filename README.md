@@ -47,7 +47,7 @@ By 2030, significantly reduce the number of deaths and the number of people affe
 
 ## 🎥Demo Video
 <p align="center">
-  <a href="https://youtu.be/4R4VspRF4OE?si=w9OD0vpOr3bACtNF"><img alt="elderus_demo" src="https://github.com/GDSC-SWU/2024-Elderus-SolutionChallenge/assets/77158164/0b1b088f-dfbb-4d67-b663-7bc878d94856">
+  <a href="https://youtu.be/gA_D1yLG9EI?si=MLKgYR4buTDMneNx"><img alt="elderus_demo" src="https://github.com/GDSC-SWU/2024-Elderus-SolutionChallenge/assets/77158164/0b1b088f-dfbb-4d67-b663-7bc878d94856">
 </p>
 
 ↑ Click this image!
