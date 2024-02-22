@@ -53,9 +53,14 @@ By 2030, significantly reduce the number of deaths and the number of people affe
 ↑ Click this image!
 
 
+## 📱How to run
+<P>You can download Elderus APK File.</P>
+<a href="https://drive.google.com/file/d/1KnTPUgRLlJAb8zta2TE5mD_EiPGJckZC/view?usp=sharing" >Download APK File</a>
+
+
 ## ✌️ Contributors
 
-|Name|[Daeun Song](https://github.com/daeun6)|[Minji Koo]()|[Jeongyeon Lee]()|[Sohyun Park]()|
+|Name|[Daeun Song](https://github.com/daeun6)|[Minji Koo]()|[Jeongyeon Lee]()|[Sohyun Park](https://github.com/Sohyunnnn)|
 |:---:|:---:|:---:|:---:|:---:|
 |Role|PM / AI / Frontend | Backend | Design | Frontend |
 |Profile Image|<img width="100" src="https://github.com/GDSC-SWU/2024-Elderus-SolutionChallenge/assets/81478444/8439db9a-63e6-43fe-8d7a-008eee9035b5"/>|<img width="100" src=""/>|<img width="100" src=""/>|<img width="130" src=""/>|
