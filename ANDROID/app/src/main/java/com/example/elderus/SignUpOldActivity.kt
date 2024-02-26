@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.util.Patterns
 import android.widget.CalendarView
 import android.widget.EditText
@@ -13,7 +14,12 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.content.ContextCompat
-import java.util.Calendar
+import com.example.elderus.network_utils.UserInfo
+import com.example.elderus.network_utils.UserInterface
+import com.example.elderus.network_utils.getRetrofit
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Response
 
 class SignUpOldActivity : AppCompatActivity() {
 
@@ -26,10 +32,15 @@ class SignUpOldActivity : AppCompatActivity() {
     private lateinit var birthdayTextView: TextView
     private lateinit var continueButton: AppCompatButton
 
+    // get retrofit
+    val retrofitService = getRetrofit().create(UserInterface::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up_old)
+
+        // get retrofit
+        val retrofitService = getRetrofit().create(UserInterface::class.java)
 
         // 캘린더 이미지뷰를 찾아서 클릭 리스너를 설정합니다.
         val calendarImageView = findViewById<ImageView>(R.id.iv_calender)
@@ -102,8 +113,38 @@ class SignUpOldActivity : AppCompatActivity() {
         } else {
             continueButton.backgroundTintList = ContextCompat.getColorStateList(this, R.color.gray2)
         }
-
+        val userInfo = UserInfo(
+            email = email,
+            password = password,
+            familyName = familyName,
+            givenName = givenName,
+            phone = phoneNumber,
+            address = null,
+            birth = birthday
+        )
         continueButton.setOnClickListener {
+
+            retrofitService.seniorJoin(userInfo).enqueue(object : retrofit2.Callback<ResponseBody> {
+
+                override fun onResponse(
+                    call: Call<ResponseBody>,
+                    response: Response<ResponseBody>
+                ) {
+
+
+                    Log.d("signup-ward-result", response.toString())
+                    if (response.isSuccessful) {
+                        Log.d("signup-ward-onSuccess", response.toString())
+
+                    }
+                }
+
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    Log.d("signup-ward-onFailure", t.toString())
+                }
+
+            })
+
             val intent = Intent(this, SignUpOldCompleteActivity::class.java)
             startActivity(intent) // 다음 액티비티 시작
 //            finish() // 현재 액티비티 종료

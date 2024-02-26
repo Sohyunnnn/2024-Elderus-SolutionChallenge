@@ -5,11 +5,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.util.Patterns
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.content.ContextCompat
+import com.example.elderus.network_utils.UserInfo
+import com.example.elderus.network_utils.UserInterface
+import com.example.elderus.network_utils.getRetrofit
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Response
 
 class SignUpGuardianActivity : AppCompatActivity() {
 
@@ -20,6 +27,10 @@ class SignUpGuardianActivity : AppCompatActivity() {
     private lateinit var etGuardianGivenName: EditText
     private lateinit var etGuardianPhoneNumber: EditText
     private lateinit var GuardiancontinueButton: AppCompatButton
+
+    // get retrofit
+    val retrofitService = getRetrofit().create(UserInterface::class.java)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up_guardian)
@@ -86,7 +97,39 @@ class SignUpGuardianActivity : AppCompatActivity() {
             GuardiancontinueButton.backgroundTintList = ContextCompat.getColorStateList(this, R.color.gray2)
         }
 
+        val userInfo = UserInfo(
+            email = email,
+            password = password,
+            familyName = familyName,
+            givenName = givenName,
+            phone = phoneNumber,
+            address = null,
+            birth = null
+        )
+
         GuardiancontinueButton.setOnClickListener {
+
+            retrofitService.guardianJoin(userInfo).enqueue(object : retrofit2.Callback<ResponseBody> {
+
+                override fun onResponse(
+                    call: Call<ResponseBody>,
+                    response: Response<ResponseBody>
+                ) {
+
+
+                    Log.d("signup-guardian-result", response.toString())
+                    if (response.isSuccessful) {
+                        Log.d("signup-guardian-onSuccess", response.toString())
+
+                    }
+                }
+
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    Log.d("signup-guardian-onFailure", t.toString())
+                }
+
+            })
+
             val intent = Intent(this, SignUpGuardianCompleteActivity::class.java)
             startActivity(intent) // 다음 액티비티 시작
 //            finish() // 현재 액티비티 종료
