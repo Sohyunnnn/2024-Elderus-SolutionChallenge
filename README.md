@@ -63,4 +63,4 @@ By 2030, significantly reduce the number of deaths and the number of people affe
 |Name|[Daeun Song](https://github.com/daeun6)|[Minji Koo]()|[Jeongyeon Lee]()|[Sohyun Park](https://github.com/Sohyunnnn)|
 |:---:|:---:|:---:|:---:|:---:|
 |Role|PM / AI / Frontend | Backend | Design | Frontend |
-|Profile Image|<img width="100" src="https://github.com/GDSC-SWU/2024-Elderus-SolutionChallenge/assets/81478444/8439db9a-63e6-43fe-8d7a-008eee9035b5"/>|<img width="100" src=""/>|<img width="100" src=""/>|<img width="130" src=""/>|
+|Profile Image|<img width="100" src="https://github.com/GDSC-SWU/2024-Elderus-SolutionChallenge/assets/81478444/8439db9a-63e6-43fe-8d7a-008eee9035b5"/>|<img width="100" src=""/>|<img width="100" src=""/>|<img width="100" src="https://github.com/GDSC-SWU/2024-Elderus-SolutionChallenge/assets/108279922/85be16ed-08fb-41a7-9a2c-b6fbafaa0679"/>|
